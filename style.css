@@ -1,0 +1,129 @@
+/* Typewriter Effect */
+.typewriter-text {
+    border-right: 2px solid transparent;
+}
+.typewriter-text.typing {
+    border-right: 2px solid #5D4037; /* Primary color cursor */
+    animation: blink 0.75s step-end infinite;
+}
+@keyframes blink {
+    from, to { border-color: transparent }
+    50% { border-color: #5D4037; }
+}
+
+.hero-image-container {
+    perspective: 1500px;
+}
+.hero-image {
+    transform: rotateY(-15deg);
+    box-shadow: 20px 20px 40px rgba(0,0,0,0.1);
+    transition: all 0.5s ease;
+}
+.hero-image:hover {
+    transform: rotateY(0deg);
+}
+
+/* Animations */
+@keyframes float {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-20px); }
+}
+.animate-float {
+    animation: float 6s ease-in-out infinite;
+}
+
+@keyframes fadeIn {
+    0% { opacity: 0; }
+    100% { opacity: 1; }
+}
+.animate-fade-in {
+    animation: fadeIn 1s ease-in;
+}
+
+/* Scroll Animations */
+.scroll-fade,
+.scroll-slide-left,
+.scroll-slide-right,
+.scroll-zoom-in,
+.scroll-rotate {
+    opacity: 0;
+    transition: all 1s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.scroll-fade {
+    transform: translateY(30px);
+}
+
+.scroll-slide-left {
+    transform: translateX(-50px);
+}
+
+.scroll-slide-right {
+    transform: translateX(50px);
+}
+
+.scroll-zoom-in {
+    transform: scale(0.9);
+}
+
+.scroll-rotate {
+    transform: rotate(-5deg) scale(0.9);
+}
+
+/* Active State for Animations */
+.scroll-fade.visible,
+.scroll-slide-left.visible,
+.scroll-slide-right.visible,
+.scroll-zoom-in.visible,
+.scroll-rotate.visible {
+    opacity: 1;
+    transform: translate(0) scale(1) rotate(0);
+}
+
+/* Stagger Delays */
+.delay-100 { transition-delay: 100ms; }
+.delay-200 { transition-delay: 200ms; }
+.delay-300 { transition-delay: 300ms; }
+.delay-400 { transition-delay: 400ms; }
+.delay-500 { transition-delay: 500ms; }
+
+
+/* Mobile Menu */
+.mobile-menu {
+    transform: translateX(-100%);
+    transition: transform 0.3s ease-in-out;
+}
+.mobile-menu.active {
+    transform: translateX(0);
+}
+
+/* Navigation Active State */
+.nav-link-active {
+    color: #FF7043 !important; /* Secondary Orange */
+    position: relative;
+}
+.nav-link-active::after {
+    content: '';
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background: #FF7043;
+    transform: scaleX(1);
+    transition: transform 0.3s ease;
+}
+
+/* Smooth Scroll */
+html {
+    scroll-behavior: smooth;
+}
+
+/* Card Hover Effects */
+.card-hover {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.card-hover:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+}
