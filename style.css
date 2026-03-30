@@ -119,6 +119,13 @@ html {
     scroll-behavior: smooth;
 }
 
+html,
+body {
+    width: 100%;
+    max-width: 100%;
+    overflow-x: hidden;
+}
+
 /* Card Hover Effects */
 .card-hover {
     transition: transform 0.3s ease, box-shadow 0.3s ease;
